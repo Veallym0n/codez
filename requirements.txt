@@ -1,0 +1,2 @@
+httpx
+duckduckgo_search

@@ -1,0 +1,5 @@
+[ai]
+#model = openai
+#endpoint = http://porky.toai.chat/to/polli 
+model = openai-large
+endpoint = https://text.pollinations.ai/openai
