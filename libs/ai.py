@@ -181,7 +181,7 @@ class AIChat:
         final_content, iteration = "", 0
         
         async with httpx.AsyncClient() as client:
-            while iteration < 10:
+            while iteration < 100:
                 iteration += 1
                 payload = {
                     "model": self.settings.model,
@@ -200,7 +200,7 @@ class AIChat:
                 if resp.status_code != 200:
                     logging.error(f"API Request Failed: {resp.status_code}")
                     logging.error(f"Server Error Information: {resp.text}")
-                    sys.exit(1)
+                    continue
                 if use_stream: tool_calls, assistant_content = await self.handle_stream(resp)
                 else:
                     data = resp.json()
